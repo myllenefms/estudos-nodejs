@@ -2,8 +2,8 @@
 
 //ações do carrinho -> cada uma será um método (começar com assinatura do método)
 //adicionar item
-async function addItem(userCart) {
-    
+async function addItem(userCart, item) {
+    userCart.push(item);
 }
 
 //deletar item - excluir o item todo
@@ -18,5 +18,12 @@ async function removeItem(userCart, index) {
 
 //calcular o total
 async function calculateTotal(userCart) {
-    
+    return userCart.reduce((total, item) => total + item.subtotal(), 0);
+}
+
+export {
+    addItem,
+    calculateTotal,
+    deleteItem,
+    removeItem
 }
