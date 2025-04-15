@@ -16,8 +16,19 @@ async function deleteItem(userCart, name) {
 }
 
 //remover um item - diminui a quantidade do item
-async function removeItem(userCart, index) {
+async function removeItem(userCart, item) {
+    const index = userCart.findIndex((p)=>p.name === item.name);
     
+    if(index == -1){
+        console.log("item não encontrado no carrinho");
+    }
+    else if(userCart[index].quantity == 1){
+        deleteItem(userCart, userCart[index].name);
+    }
+    else if(userCart[index].quantity > 1){
+        userCart[index].quantity -= 1;
+        await userCart[index].subtotal();
+    }
 }
 
 //calcular o total
@@ -26,6 +37,7 @@ async function calculateTotal(userCart) {;
     console.log(`\n 💵 Shop Cart Total is: R$ ${result} 💵`);
 }
 
+//exibição do carrinho
 async function displayCart(userCart) {
     console.log("\n 🛒 Shop Cart List 🛒");
     userCart.forEach((item, index) => {
