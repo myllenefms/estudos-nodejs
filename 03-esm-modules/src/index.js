@@ -14,5 +14,5 @@ getDataFromAPI();
 
 //a extensão do arquivo identifica a forma de modularização - melhorar a vida do dev
 // se .cjs -> modularização antiga usando module.exports e require
-// se .mjs -> modularização emca usando exports e import
-// se .js -> pode usar ambus tipos de modulos
+// se .mjs -> modularização ecma usando exports e import
+// se .js -> pode usar ambos tipos de modulos
