@@ -9,8 +9,9 @@ Criar a lógica de um carrinho de compras
 - Carrinho de compras
 
 ## Entidades relacionadas
-- carrinho de compras
-- itens no carrinho
+cada entidade será tratada em um arquivo específico
+- carrinho de compras: cart.js
+- itens no carrinho: item.js
 
 ## Funções
 - cálculo de do valor total por item

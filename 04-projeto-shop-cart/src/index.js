@@ -1,1 +1,1 @@
-console.log("hello shop cart")
+const cart = [];
