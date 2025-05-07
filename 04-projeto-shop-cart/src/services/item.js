@@ -7,8 +7,15 @@ async function createItem(name, price, quantity) {
         name,
         price,
         quantity,
-        subtotal: () => price * quantity,
+        subtotal: await updateSubtotal(price, quantity),
     }
 }
 
-export default createItem;
+async function updateSubtotal(price, quantity) {
+    return price * quantity;
+}
+
+export {
+    createItem,
+    updateSubtotal
+};
