@@ -1,3 +1,4 @@
+import { updateSubtotal } from "./item.js";
 //regras de negócio da entidade carrinho
 
 //ações do carrinho -> cada uma será um método (começar com assinatura do método)
@@ -27,13 +28,13 @@ async function removeItem(userCart, item) {
     }
     else if(userCart[index].quantity > 1){
         userCart[index].quantity -= 1;
-        await userCart[index].subtotal();
+        userCart[index].subtotal = await updateSubtotal(userCart[index].price, userCart[index].quantity);
     }
 }
 
 //calcular o total
 async function calculateTotal(userCart) {;
-    const result = userCart.reduce((total, item) => total + item.subtotal(), 0)
+    const result = userCart.reduce((total, item) => total + item.subtotal, 0)
     console.log(`\n 💵 Shop Cart Total is: R$ ${result} 💵`);
 }
 
@@ -41,7 +42,7 @@ async function calculateTotal(userCart) {;
 async function displayCart(userCart) {
     console.log("\n 🛒 Shop Cart List 🛒");
     userCart.forEach((item, index) => {
-        console.log(`${index+1}. ${item.name} - R$ ${item.price} | ${item.quantity}x | Subtotal ${item.subtotal()}`)
+        console.log(`${index+1}. ${item.name} - R$ ${item.price} | ${item.quantity}x | Subtotal ${item.subtotal}`)
     });
 }
 
