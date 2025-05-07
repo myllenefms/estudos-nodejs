@@ -1,1 +1,1 @@
-console.log("hello world");
+console.log("hello world. \nrodando via script \niniciando servidor ...");

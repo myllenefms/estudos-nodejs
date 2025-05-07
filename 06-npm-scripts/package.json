@@ -4,7 +4,9 @@
   "main": "index.js",
   "type":"module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test-run": "echo \"Error: no test specified\" && exit 1",
+    "dev-run":"node src/index.js && exit 1",
+    "dev-watch": "node --watch src/index.js"
   },
   "keywords": [],
   "author": "",
