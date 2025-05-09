@@ -1,5 +1,6 @@
 import prompt from "prompt";
 import mainPrompt from "./prompts/prompt-main.js";
+import chalk from "chalk";
 
 async function main() {
     prompt.get(mainPrompt, async (err, choice) => {
