@@ -1,16 +1,5 @@
-async function permittedCharacters() {
-    let permitted = [];
+import permittedCharacters from "./utils/permitted-characters.js";
 
-    if(process.env.UPPERCASE === "true") permitted.push(..."ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-
-    if(process.env.LOWERCASE === "true") permitted.push(..."abcdefghijklmnopqrstuvwxyz")
-    
-    if(process.env.NUMBER === "true") permitted.push(..."0123456789")
-    
-    if(process.env.SPECIAL_CHARACTERS === "true") permitted.push(..."!@#$%&*-_^()/")
-    
-    return permitted;
-}
 
 async function handle() {
     let characters = [];
