@@ -1,0 +1,10 @@
+{//comportamento do typescript: npx tsc --init
+  "compilerOptions": {
+    "target":"ES6", 
+    "module":"CommonJS", //compativel commonjs
+    "outDir":"./dist", //pasta de saida do transpile
+    "strict":true, //verificar variáveis
+    "esModuleInterop": true //compativel commonjs
+
+  }
+}
